@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ .pro-nav-i {
+    width: 29px;
+    height: 30px;
+    margin-top: 8px;
+    border-radius: 5px;
+ }
