@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <%= link_to 'Blogs', pages_about_path, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to 'Home', pages_home_path, class: 'nav-link active' %>
+      </li>
+      <li class="nav-item">
+       <% if current_user %>
+        <%= link_to 'Manage Users', admin_index_path,
+         class: 'nav-link active' if logged_in?(:admin) %>
+       <% end %>
+      </li>
+      <li class="nav-item">
+       <% if current_user %>
+        <%= link_to 'My blogs', blogs_path,
+         class: 'nav-link active' if logged_in?(:admin, :user) %>
+       <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'All blogs', pages_allblogs_path, class: 'nav-link active' %>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <% if current_user %>
+            <%= link_to "#{ current_user.name }", edit_user_registration_path, class: 'nav-link active' %>
+          <% end %>
+        </li>
+      </ul>
+      <% if current_user %>
+          <%= link_to "LogOut",destroy_user_session_path, method: :delete, class: "btn btn-danger my-2 my-sm-0"%>   
+      <% else %>
+          <%= link_to "Log_In",new_user_session_path, class: "btn btn-success my-2 my-sm-0"%>  
+      <% end %>
+    </form>
+  </div>
+</nav>
