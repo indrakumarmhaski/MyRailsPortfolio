@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <%= link_to 'Blogs', pages_aboutme_path, class: 'navbar-brand' %>
+  <%= link_to 'Indra Kumar', pages_aboutme_path, class: 'navbar-brand' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,19 +10,11 @@
       </li>
       <li class="nav-item">
        <% if current_user %>
-        <%= link_to 'Manage Users', admin_index_path,
-         class: 'nav-link active' if logged_in?(:admin) %>
+        <%= link_to 'About', pages_aboutme_path,
+         class: 'nav-link active' %>
        <% end %>
       </li>
-      <li class="nav-item">
-       <% if current_user %>
-        <%= link_to 'My blogs', blogs_path,
-         class: 'nav-link active' if logged_in?(:admin, :user) %>
-       <% end %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'All blogs', pages_allblogs_path, class: 'nav-link active' %>
-      </li>
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <ul class="navbar-nav mr-auto">
