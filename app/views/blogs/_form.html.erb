@@ -27,14 +27,10 @@
   </div>
 
   <div class="field">
-    <%= form.label :blogimage %>
-    <%= form.text_field :blogimage %>
+    <%= form.label :blogimage %><br />
+    <%= form.file_field :blogimage %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>

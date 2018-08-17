@@ -17,12 +17,12 @@
 
 <p>
   <strong>Blogimage:</strong>
-  <%= @blog.blogimage %>
+  <%= image_tag(@blog.blogimage_url) %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @blog.user %>
+  <%= @blog.user.name %>
 </p>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
