@@ -9,10 +9,13 @@
         <%= link_to 'Home', pages_home_path, class: 'nav-link active' %>
       </li>
       <li class="nav-item">
-       <% if current_user %>
-        <%= link_to 'About', pages_aboutme_path,
-         class: 'nav-link active' %>
-       <% end %>
+        <%= link_to 'About', pages_aboutme_path, class: 'nav-link active' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Blogs', blogs_path, class: 'nav-link active' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'New-Blog', new_blog_path, class: 'nav-link active' if logged_in?(:site_admin) %>
       </li>
 
     </ul>
