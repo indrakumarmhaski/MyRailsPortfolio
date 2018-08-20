@@ -14,4 +14,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   mount_uploader :avatar, AvatarUploader
   has_many :blogs,dependent: :destroy
+  has_many :likes, dependent: :destroy
+
 end
