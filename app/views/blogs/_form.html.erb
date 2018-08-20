@@ -31,6 +31,15 @@
     <%= form.file_field :blogimage %>
   </div>
 
+  <div class="field">
+    <%= form.fields_for :tags do |tag_form| %>
+      <%= render 'tag_fields',f: tag_form %>
+    <% end %>
+
+    <div class="text-left">
+      <%= link_to_add_association 'AddTag', form, :tags, class: 'btn add-btn btn-primary btn-sm'%>
+    </div>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
