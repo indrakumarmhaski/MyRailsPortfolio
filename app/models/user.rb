@@ -15,7 +15,20 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   has_many :blogs,dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :blog_comments, dependent: :destroy  
+  has_many :blog_comments, dependent: :destroy
+  
+  
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, provideruserid: auth.uid).first_or_create do |user|
+    user.provider = auth.provider
+    user.provideruserid = auth.uid
+    user.email = auth.info.email
+    user.provideravatar = auth.info.image
+    user.name = auth.info.first_name + ' ' + auth.info.last_name
+    user.password = Devise.friendly_token[0,20]
+    byebug
+    end
+  end
 
 
 end

@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <strong>Title:</strong>
@@ -25,11 +25,13 @@
   <%= @blog.user.name %>
 </p>
 
-<%= render 'likes/new',post: @blog if logged_in?(:admin,:user) %>
+<%= render 'likes/new',post: @blog if logged_in?(:site_admin,:user) %>
 
 <%= render @blog.blog_comments %>
 
-<%= render 'blog_comments/new', post: @blog if logged_in?(:admin,:user) %>
+<%= render 'blog_comments/new', post: @blog  %>
+
+
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
