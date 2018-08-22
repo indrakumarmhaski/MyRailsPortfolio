@@ -25,13 +25,7 @@
   <%= @blog.user.name %>
 </p>
 
-<%= form_with(model: Like.new, local: true) do |form| %>
-  <div class="actions">
-    <%= @blog.likes.distinct.count('user_id') %>
-    <%= form.hidden_field 'blog_id', :value => params[:id] %>
-    <%= form.submit('Hit a like!') %>
-  </div>
-<% end %>
+<%= render 'likes/new',post: @blog if logged_in?(:admin,:user) %>
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
