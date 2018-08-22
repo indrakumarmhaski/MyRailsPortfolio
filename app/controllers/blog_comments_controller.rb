@@ -1,6 +1,7 @@
 class BlogCommentsController < ApplicationController
-
+    before_action :authenticate_user!
     before_action :set_blog
+    access all: [:create], user: [:create], site_admin: :all    
     
     def create
         @comment = BlogComment.new(blogcomment_params)
@@ -8,6 +9,8 @@ class BlogCommentsController < ApplicationController
         respond_to do |format|
           if @comment.save
             format.html { redirect_to @blog }
+          else
+            format.html { redirect_to @blog, notice: 'Something went wrong.' }
           end
         end
       end

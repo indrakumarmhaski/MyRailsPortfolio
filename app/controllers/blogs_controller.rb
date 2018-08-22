@@ -1,6 +1,8 @@
 class BlogsController < ApplicationController
+  before_action :authenticate_user!, except: [:index,:show]
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  access user: [:index, :show], site_admin: :all
+
+  before_action :authorize_user, except: [:index,:show]
 
   # GET /blogs
   # GET /blogs.json
@@ -15,7 +17,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/new
   def new
-    @blog = Blog.new
+      @blog = Blog.new
   end
 
   # GET /blogs/1/edit
@@ -66,6 +68,14 @@ class BlogsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
       @blog = Blog.find(params[:id])
+    end
+
+    def authorize_user
+      if logged_in?(:site_admin)  
+        return
+      else
+        redirect_to pages_home_path, notice: 'Permission Denied.'
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
