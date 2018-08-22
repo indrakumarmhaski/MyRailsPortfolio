@@ -29,5 +29,7 @@
 
 <%= render @blog.blog_comments %>
 
+<%= render 'blog_comments/new', post: @blog if logged_in?(:admin,:user) %>
+
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
