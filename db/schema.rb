@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_23_143053) do
+ActiveRecord::Schema.define(version: 2018_08_23_143548) do
 
   create_table "blog_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 2018_08_23_143053) do
     t.string "MainImage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_work_examples_on_user_id"
   end
 
   add_foreign_key "blog_comments", "blogs"
@@ -83,4 +85,5 @@ ActiveRecord::Schema.define(version: 2018_08_23_143053) do
   add_foreign_key "likes", "blogs"
   add_foreign_key "likes", "users"
   add_foreign_key "tags", "blogs"
+  add_foreign_key "work_examples", "users"
 end
