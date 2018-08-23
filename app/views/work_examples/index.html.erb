@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Work Examples</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Thumbimage</th>
+      <th>Mainimage</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_examples.each do |work_example| %>
+      <tr>
+        <td><%= work_example.title %></td>
+        <td><%= work_example.description %></td>
+        <td><%= work_example.ThumbImage %></td>
+        <td><%= work_example.MainImage %></td>
+        <td><%= link_to 'Show', work_example %></td>
+        <td><%= link_to 'Edit', edit_work_example_path(work_example) %></td>
+        <td><%= link_to 'Destroy', work_example, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Work Example', new_work_example_path %>
