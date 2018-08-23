@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @work_example.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @work_example.description %>
+</p>
+
+<p>
+  <strong>Thumbimage:</strong>
+  <%= @work_example.ThumbImage %>
+</p>
+
+<p>
+  <strong>Mainimage:</strong>
+  <%= @work_example.MainImage %>
+</p>
+
+<%= link_to 'Edit', edit_work_example_path(@work_example) %> |
+<%= link_to 'Back', work_examples_path %>
