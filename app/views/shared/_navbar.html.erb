@@ -17,6 +17,12 @@
       <li class="nav-item">
         <%= link_to 'New-Blog', new_blog_path, class: 'nav-link active' if logged_in?(:site_admin) %>
       </li>
+      <li class="nav-item">
+        <%= link_to 'Work Examples', work_examples_path, class: 'nav-link active' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'New-Work-Example', new_work_example_path, class: 'nav-link active' if logged_in?(:site_admin) %>
+      </li>
 
     </ul>
     <form class="form-inline my-2 my-lg-0">
