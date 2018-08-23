@@ -27,6 +27,8 @@
 
 <%= render 'likes/new',post: @blog if logged_in?(:site_admin,:user) %>
 
+<%= render 'tags' %>
+
 <%= render @blog.blog_comments %>
 
 <%= render 'blog_comments/new', post: @blog  %>
