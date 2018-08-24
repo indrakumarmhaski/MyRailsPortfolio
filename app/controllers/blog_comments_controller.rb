@@ -23,7 +23,7 @@ class BlogCommentsController < ApplicationController
         else
           redirect_to @blog, notice: 'Permission Denied'
         end
-        end
+      end
 
       private
 
