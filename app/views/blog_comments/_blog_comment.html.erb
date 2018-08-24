@@ -1,5 +1,5 @@
 
-<p> <%= blog_comment.comment %>
+<p> <%= blog_comment.comment %> <%= link_to 'Delete', blog_comment, method: :delete, data: { confirm: 'Are you sure?' }%>
  <br>
     ~ <%= blog_comment.user.name %>. 
   <br>
