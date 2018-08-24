@@ -1,0 +1,42 @@
+<%= form_with(model: workexample, local: true) do |form| %>
+  <% if workexample.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(workexample.errors.count, "error") %> prohibited this workexample from being saved:</h2>
+
+      <ul>
+      <% workexample.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thumbimage %>
+    <%= form.text_field :thumbimage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mainimage %>
+    <%= form.text_field :mainimage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

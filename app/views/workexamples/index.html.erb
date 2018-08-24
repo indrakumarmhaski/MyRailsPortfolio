@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Workexamples</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Thumbimage</th>
+      <th>Mainimage</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workexamples.each do |workexample| %>
+      <tr>
+        <td><%= workexample.title %></td>
+        <td><%= workexample.description %></td>
+        <td><%= workexample.thumbimage %></td>
+        <td><%= workexample.mainimage %></td>
+        <td><%= workexample.user %></td>
+        <td><%= link_to 'Show', workexample %></td>
+        <td><%= link_to 'Edit', edit_workexample_path(workexample) %></td>
+        <td><%= link_to 'Destroy', workexample, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Workexample', new_workexample_path %>
