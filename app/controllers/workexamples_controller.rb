@@ -1,7 +1,8 @@
 class WorkexamplesController < ApplicationController
+  before_action :authenticate_user!, except: [:index,:show]
   before_action :set_workexample, only: [:show, :edit, :update, :destroy]
-  access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
-
+  before_action :authorize_user, except: [:index,:show]
+  
   # GET /workexamples
   def index
     @workexamples = Workexample.all
@@ -23,7 +24,7 @@ class WorkexamplesController < ApplicationController
   # POST /workexamples
   def create
     @workexample = Workexample.new(workexample_params)
-
+    @workexample.user_id = current_user.id
     if @workexample.save
       redirect_to @workexample, notice: 'Workexample was successfully created.'
     else
@@ -50,6 +51,14 @@ class WorkexamplesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_workexample
       @workexample = Workexample.find(params[:id])
+    end
+
+    def authorize_user
+      if logged_in?(:site_admin)  
+        return
+      else
+        redirect_to pages_home_path, notice: 'Permission Denied.'
+      end
     end
 
     # Only allow a trusted parameter "white list" through.

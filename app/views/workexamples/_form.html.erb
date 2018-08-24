@@ -22,19 +22,15 @@
   </div>
 
   <div class="field">
-    <%= form.label :thumbimage %>
-    <%= form.text_field :thumbimage %>
+    <%= form.label :thumbimage %><br />
+    <%= form.file_field :thumbimage %>
   </div>
 
   <div class="field">
     <%= form.label :mainimage %>
-    <%= form.text_field :mainimage %>
+    <%= form.file_field :mainimage %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
 
   <div class="actions">
     <%= form.submit %>
