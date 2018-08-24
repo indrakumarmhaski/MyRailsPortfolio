@@ -26,7 +26,6 @@ class User < ApplicationRecord
     user.provideravatar = auth.info.image
     user.name = auth.info.first_name + ' ' + auth.info.last_name
     user.password = Devise.friendly_token[0,20]
-    byebug
     end
   end
 
