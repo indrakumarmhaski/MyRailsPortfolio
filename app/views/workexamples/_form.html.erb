@@ -31,6 +31,16 @@
     <%= form.file_field :mainimage %>
   </div>
 
+  <div class="field">
+    <%= form.fields_for :technologies do |technology_form| %>
+      <%= render 'technologies_fields',f: technology_form %>
+    <% end %>
+
+  <div class="text-left">
+    <%= link_to_add_association 'AddTechnology', form, :technologies, class: 'btn add-btn btn-primary btn-sm'%>
+  </div>
+  </div>
+
 
   <div class="actions">
     <%= form.submit %>
