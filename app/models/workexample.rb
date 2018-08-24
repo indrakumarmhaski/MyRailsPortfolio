@@ -3,6 +3,7 @@ class Workexample < ApplicationRecord
   mount_uploader :thumbimage, ThumbimageUploader
   mount_uploader :mainimage, MainimageUploader
   has_many :technologies, dependent: :destroy, inverse_of: :workexample
+  has_many :workexample_comments, dependent: :destroy
   accepts_nested_attributes_for :technologies,
                                       reject_if: lambda { |attrs| attrs['topic'].blank? },
                                       allow_destroy: true
