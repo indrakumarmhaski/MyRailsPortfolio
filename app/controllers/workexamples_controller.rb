@@ -23,7 +23,7 @@ class WorkexamplesController < ApplicationController
   # POST /workexamples
   def create
     @workexample = Workexample.new(workexample_params)
-
+    @workexample.user_id = current_user.id
     if @workexample.save
       redirect_to @workexample, notice: 'Workexample was successfully created.'
     else
