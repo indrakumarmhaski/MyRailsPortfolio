@@ -20,7 +20,7 @@ class WorkexampleCommentsController < ApplicationController
       private
 
       def set_workexample
-        @blog = workexample.find(params[:workexample_comment][:workexample_id])
+        @workexample = Workexample.find(params[:workexample_comment][:workexample_id])
       end
   
       # Never trust parameters from the scary internet, only allow the white list through.

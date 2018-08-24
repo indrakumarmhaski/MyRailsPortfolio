@@ -27,5 +27,9 @@
 
 <%= render 'technologies' %>
 
+<%= render @workexample.workexample_comments %>
+
+<%= render 'workexample_comments/new', post: @blog %>
+
 <%= link_to 'Edit', edit_workexample_path(@workexample) %> |
 <%= link_to 'Back', workexamples_path %>
