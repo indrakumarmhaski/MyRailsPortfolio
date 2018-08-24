@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_131324) do
+ActiveRecord::Schema.define(version: 2018_08_24_145036) do
 
   create_table "blog_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -76,6 +76,16 @@ ActiveRecord::Schema.define(version: 2018_08_24_131324) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "workexample_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "user_id"
+    t.bigint "workexample_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_workexample_comments_on_user_id"
+    t.index ["workexample_id"], name: "index_workexample_comments_on_workexample_id"
+  end
+
   create_table "workexamples", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -94,5 +104,7 @@ ActiveRecord::Schema.define(version: 2018_08_24_131324) do
   add_foreign_key "likes", "users"
   add_foreign_key "tags", "blogs"
   add_foreign_key "technologies", "workexamples"
+  add_foreign_key "workexample_comments", "users"
+  add_foreign_key "workexample_comments", "workexamples"
   add_foreign_key "workexamples", "users"
 end
