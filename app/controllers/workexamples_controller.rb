@@ -63,6 +63,6 @@ class WorkexamplesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def workexample_params
-      params.require(:workexample).permit(:title, :description, :thumbimage, :mainimage, :user_id)
+      params.require(:workexample).permit(:title, :description, :thumbimage, :mainimage, technologies_attributes: [:id, :topic, :_destroy])
     end
 end
