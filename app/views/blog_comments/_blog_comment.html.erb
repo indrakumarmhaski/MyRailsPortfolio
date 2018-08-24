@@ -1,5 +1,11 @@
 
-<p> <%= blog_comment.comment %>
+<p>
+ <%= blog_comment.comment %>
+ <% if current_user %>
+  <% if(current_user.id == blog_comment.user_id || logged_in?(:site_admin))%>
+     <%= link_to 'Delete', blog_comment, method: :delete, data: { confirm: 'Are you sure?' }%>
+  <% end %>
+ <% end %>
  <br>
     ~ <%= blog_comment.user.name %>. 
   <br>
