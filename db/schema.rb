@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_110616) do
+ActiveRecord::Schema.define(version: 2018_08_24_131324) do
 
   create_table "blog_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 2018_08_24_110616) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["blog_id"], name: "index_tags_on_blog_id"
+  end
+
+  create_table "technologies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "topic"
+    t.bigint "workexample_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["workexample_id"], name: "index_technologies_on_workexample_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -96,6 +104,7 @@ ActiveRecord::Schema.define(version: 2018_08_24_110616) do
   add_foreign_key "likes", "blogs"
   add_foreign_key "likes", "users"
   add_foreign_key "tags", "blogs"
+  add_foreign_key "technologies", "workexamples"
   add_foreign_key "work_examples", "users"
   add_foreign_key "workexamples", "users"
 end
