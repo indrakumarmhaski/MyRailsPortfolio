@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :work_examples
   resources :blog_comments, only: [:create, :destroy]
   resources :likes, only: [:create]
   resources :blogs
