@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :workexample_comments, only: [:create, :destroy]
-  resources :workexamples
+  resources :workexamples do
+    put :sort, on: :collection
+  end
   resources :blog_comments, only: [:create, :destroy]
   resources :likes, only: [:create]
   resources :blogs

@@ -21,6 +21,14 @@ class WorkexamplesController < ApplicationController
   def edit
   end
 
+  def sort
+    params[:order].each do |key,value|
+      Workexample.find(value[:id]).update(position: value[:position])
+    end 
+
+    render body: nil
+  end
+
   # POST /workexamples
   def create
     @workexample = Workexample.new(workexample_params)
