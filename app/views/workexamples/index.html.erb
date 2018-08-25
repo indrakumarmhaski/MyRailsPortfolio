@@ -31,10 +31,10 @@
 </table>
 
 <br>
-    <div class="containe">
+    <div class="container">
     <h3>Projects:</h3>
         <div class="row">
-          <ul class=" sortable col-12">
+          <ul class="sortable col-12">
             <% @workexamples.each do |we| %>
                     <li class="card font-weight-normal form-control mt-1" data-id="<%= we.id %>" ><%= we.title %> </li>
             <% end %>
