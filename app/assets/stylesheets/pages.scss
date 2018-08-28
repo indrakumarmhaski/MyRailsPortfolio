@@ -1,3 +1,54 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ================================================= Landing home page styling ============================================================
+.landingpage-bg-image{
+    background-image: asset_url("bg.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: -webkit-fill-available;
+    border-top: 1px solid cornflowerblue;
+}
+
+.blu-margin{
+    width: 100%;
+    border-top: 1px solid cornflowerblue;
+    margin-top: 55px;
+}
+
+
+#demo{
+    margin-top: 200px;
+    color: white;
+    font-size: 3rem !important;
+    
+}
+
+.mastfoot{
+    margin-top: 200px;
+}
+
+.inner {
+    color: white;
+}
+
+
+// For large screen sizes
+@media(min-width: 710px) {
+}
+
+// For small screen sizes
+@media(max-width: 710px) {  
+.landingpage-bg-image{
+    height: 653px;
+}
+#demo{
+    margin-top: 104px;
+}
+.mastfoot{
+    margin-bottom: 20px;
+}
+}
+
+// ================================================= ...Landing home page styling ============================================================
