@@ -14,13 +14,9 @@
   <body>
     <%= render 'shared/navbar'%>
     <% if notice %>
-       <script>
-          alert('<%= notice %>'); 
-       </script>
+      <%= js add_gritter(flash[:notice], :image => :notice, :title => "Attention", :time => 1000) %>
     <% elsif alert%>
-       <script>
-          alert('<%= alert %>'); 
-       </script>
+      <%= js add_gritter(flash[:alert], :image => :notice, :title => "Attention!", :time => 1000) %>
     <% end %>
     <%= yield %>
 
