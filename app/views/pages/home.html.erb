@@ -1,39 +1,28 @@
 
 <div class="fill-screen landingpage-bg-image" >
-
     <div class="blu-margin"></div>
-
     <div class="container text-center">
         <h1 id="demo"></h1>
-
         <div class="landingpage-aboutme-btn mt-lg-5">
             <%= link_to 'More About Me', pages_aboutme_path, class: 'btn btn-lg btn-primary' %>
         </div>
-
-
         <footer class="mastfoot">
             <div class="inner">
                 <p> Copyright &copy; 2018 Indra Kumar Mhaski. </p>
             </div>
         </footer>
-
-
     </div>
-
 </div>
 
-
-
 <script>
-var i = 0;
-var txt = 'Welcome to my online home.';
-var speed = 150;
-
-(function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-})();
+    var i = 0;
+    var txt = 'Welcome to my online home.';
+    var speed = 150;
+        (function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("demo").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+        })();
 </script>
