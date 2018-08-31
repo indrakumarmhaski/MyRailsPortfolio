@@ -188,3 +188,24 @@
   }
   
 // ================================================ ... About me page styling ================================================================
+
+// ================================================ Contact me page styling ================================================================
+// .container {
+//     max-width: 960px;
+//   }
+  
+//   .lh-condensed { line-height: 1.25; }
+.google-map {
+    height: 400px;
+    width: 400px;
+}
+
+// For small screen sizes
+@media(max-width: 710px) {
+    .google-map {
+        height: 400px;
+        width: -webkit-fill-available;
+    }
+}
+// ================================================ ... Contact me page styling ================================================================
+
