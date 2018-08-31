@@ -1,2 +1,29 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+    <div class="container">
+      <div class="py-5 text-center">
+        <h2 class="mt-5">Willing to work together?</h2>
+        <p class="lead">Below are the contact details of mine, I strongly 
+        belive in working together.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+              <h3>My Google Map Location</h3>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13844.057355155683!2d77.80816262835444!3d23.51561567088958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMwJzU0LjEiTiA3N8KwNDgnNTguMCJF!5e0!3m2!1sen!2sin!4v1535688466497" class="google-map"  frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="col-md-8 order-md-1">
+          <h4 class="mt-3">Address</h4>
+          <em>Civil Lines, Vidisha, Madhya Pradesh 464001.</em>
+          <h4 class="mbl mt-5">Mobile</h4>
+          <em>+91-87707-34350</em>
+          <h4 class="mbl mt-5">Email</h4>
+          <em><a href="mailto:indrakumarmhaski@gmail.com?subject=PortfolioContact" "email="" me"="">indrakumarmhaski@gmail.com</a></em>
+        </div>
+      </div>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2018 Indra Kumar Mhaski.</p>
+        <ul class="list-inline">
+          <%= link_to 'Home', pages_home_path,class: 'list-inline-item' %>
+          <%= link_to 'Read My Blogs', blogs_path,class: 'list-inline-item' %>
+          <%= link_to 'Work Examples', workexamples_path,class: 'list-inline-item' %>
+        </ul>
+      </footer>
+    </div>

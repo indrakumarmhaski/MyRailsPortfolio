@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require gritter
  */
 
  @import "bootstrap";
@@ -21,4 +22,8 @@
     height: 30px;
     margin-top: 8px;
     border-radius: 5px;
+ }
+
+ .nav-link:hover{
+     text-decoration: underline;
  }

@@ -13,9 +13,11 @@
 
   <body>
     <%= render 'shared/navbar'%>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
+    <% if notice %>
+      <%= js add_gritter(flash[:notice], :image => :notice, :title => "Attention", :time => 900) %>
+    <% elsif alert%>
+      <%= js add_gritter(flash[:alert], :image => :notice, :title => "Attention!", :time => 900) %>
+    <% end %>
     <%= yield %>
 
 

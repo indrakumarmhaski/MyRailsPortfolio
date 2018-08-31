@@ -1,26 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <%= link_to 'Indra Kumar', pages_home_path, class: 'navbar-brand' %>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+  <%= link_to 'Indra Kumar Mhaski', pages_aboutme_path, class: 'navbar-brand' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+    <ul class="navbar-nav ml-lg-4 mr-auto">
+      <li class="nav-item ml-lg-1 active">
         <%= link_to 'Home', pages_home_path, class: 'nav-link active' %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ml-lg-1">
         <%= link_to 'About', pages_aboutme_path, class: 'nav-link active' %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ml-lg-1">
+        <%= link_to 'Contact', pages_contact_path, class: 'nav-link active' %>
+      </li>
+      <li class="nav-item ml-lg-1">
         <%= link_to 'Blogs', blogs_path, class: 'nav-link active' %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ml-lg-1">
         <%= link_to 'New-Blog', new_blog_path, class: 'nav-link active' if logged_in?(:site_admin) %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ml-lg-1">
         <%= link_to 'Work Examples', workexamples_path, class: 'nav-link active' %>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ml-lg-1">
         <%= link_to 'New-Work-Example', new_workexample_path, class: 'nav-link active' if logged_in?(:site_admin) %>
       </li>
 
