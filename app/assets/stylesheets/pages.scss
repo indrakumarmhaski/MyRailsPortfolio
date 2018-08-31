@@ -83,16 +83,19 @@
 
     // For small screen sizes
     @media(max-width: 710px) { 
-    .aboutindra{
-        margin-bottom: 0px;
-    }
-    .aboutme-bg-image{
-        background-image: none;
-        height: auto;
-    }
-    .marketing {
-        margin-top: 10px;
-    }
+        .aboutindra{
+            margin-bottom: 0px;
+        }
+        .aboutme-bg-image{
+            background-image: none;
+            height: auto;
+        }
+        .marketing {
+            margin-top: 10px;
+        }
+        .aboutindra {
+            height: 300px !important;
+        }
 
     }
     .carousel {
