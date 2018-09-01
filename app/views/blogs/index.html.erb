@@ -16,7 +16,7 @@
         </span>
         <%=link_to blog.user.name, pages_aboutme_path, class: 'blog-index-username'%>
       </div>
-      <%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %> || 
+      <%= link_to 'Edit || ', edit_blog_path(blog) if logged_in?(:site_admin) %> 
       <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
       <%= link_to "<h2>#{blog.title}</h2>".html_safe, blog, class: 'blog-index-body-heading'%>
       <div class="blog-index-body">
@@ -33,7 +33,7 @@
     <p class="mb-1">&copy; 2018 Indra Kumar Mhaski.</p>
     <ul class="list-inline">
         <%= link_to 'Home', pages_home_path,class: 'list-inline-item' %>
-        <%= link_to 'Top', pages_home_path,class: 'list-inline-item' %>
+        <%= link_to 'Top','#',class: 'list-inline-item' %>
         <%= link_to 'Work Examples', workexamples_path,class: 'list-inline-item' %>
     </ul>
 </footer>

@@ -2,8 +2,10 @@
 
 <%= form_with(model: Like.new, local: true) do |form| %>
   <div class="actions">
-    <%= @blog.likes.distinct.count('user_id') %>
+      <%= @blog.likes.distinct.count('user_id') %>
     <%= form.hidden_field 'blog_id', :value => params[:id] %>
-    <%= form.submit('Hit a like!') %>
+    <button class="like-submit-btn" type="submit">
+     <i class="far fa-3x fa-heart"></i>
+    </button>
   </div>
 <% end %>
