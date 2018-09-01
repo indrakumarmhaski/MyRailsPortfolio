@@ -91,6 +91,7 @@
 }
 // =================================================== ...Index page ==================================================================================
 
+// =================================================== Show page========================================================================================
 .blog-show-image {
     width: -webkit-fill-available !important;
     margin-top: 56px;
@@ -146,11 +147,30 @@
         height: 81px;
     }
 }
+// ====================================================== ...Show page =============================================================================
 
+.blog-form-container{
+    margin-top: 56px !important;
+}
 
+.blog-form-description {
+    height: 150px !important;
+}
 
+.blog-form-body{
+    height: 200px !important;
+}
 
-
-
-
+@media (min-width: 1200px){
+    .blog-form-container{
+        max-width: 950px !important;
+    }
+}
+// for small screens
+@media(max-width: 710px) {  
+    .blog-form-description {
+        width: 292px;
+        height: 81px;
+    }
+}
 
