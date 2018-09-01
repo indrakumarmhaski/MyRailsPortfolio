@@ -2,9 +2,9 @@
   <div class="actions">
     <%= form.hidden_field 'workexample_id', :value => params[:id] %>
     <div class="field">
-        <%= form.label :comment %>
-        <%= form.text_area :comment %>
+        <h5>Add a Comment:</h5>
+        <%= form.text_area :comment, class: 'comment-textarea' %>
     </div>
-    <%= form.submit('Comment') %>
+<button class="btn btn-sm btn-primary" type="submit">Add Comment</button>
   </div>
 <% end %>

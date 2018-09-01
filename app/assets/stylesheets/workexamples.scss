@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "jquery-ui";
 
-
+// ==================== Index page ========================
 .we-index-card{
     width: 30% !important;
     margin-right: 43px !important;
@@ -24,5 +24,68 @@
     .we-index-card{
         width: inherit !important;
         margin-top: 35px;
+    }
+}
+// ==================== ...Index page ==========================
+
+// ==================== Show Page ==============================
+.we-show-image {
+    width: -webkit-fill-available !important;
+    margin-top: 56px;
+    max-height: 600px;
+    max-width: inherit;
+}
+.we-show-text {
+    margin: .6em 0 1em;
+    word-wrap: break-word;
+    font-size: 20px;
+    line-height: 1.3;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+.comment-textarea{
+    width: 552px;
+    height: 100px;
+}
+
+@media (min-width: 1200px){
+.we-show-container{
+    max-width: 950px !important;
+}
+}
+// for small screens
+@media(max-width: 710px) {  
+    .we-show-image {
+        width: inherit !important;
+    }
+
+    .comment-textarea {
+        width: 292px;
+        height: 81px;
+    }
+}
+
+// ================================= ... Show page ===================
+
+
+
+.we-form-container{
+    margin-top: 56px !important;
+}
+
+.we-form-description {
+    height: 150px !important;
+}
+
+@media (min-width: 1200px){
+    .we-form-container{
+        max-width: 950px !important;
+    }
+}
+// for small screens
+@media(max-width: 710px) {  
+    .we-form-description {
+        width: 292px;
+        height: 81px;
     }
 }

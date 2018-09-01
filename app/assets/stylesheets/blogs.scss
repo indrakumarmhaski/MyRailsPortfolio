@@ -95,6 +95,7 @@
 .blog-show-image {
     width: -webkit-fill-available !important;
     margin-top: 56px;
+    max-width: inherit;
 }
 .blog-show-desc-text {
     margin: .6em 0 1em;
@@ -138,9 +139,13 @@
 }
 // for small screens
 @media(max-width: 710px) {  
+    .blog-show-image {
+        width: inherit !important;
+    }
     .blog-show-like {
         position: static !important;
         margin-top: 10px;
+        margin-left: 40%;
     }
     .comment-textarea {
         width: 292px;
