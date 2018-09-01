@@ -1,35 +1,22 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @workexample.title %>
-</p>
+<div class="container we-show-container">
+    <%= image_tag(@workexample.mainimage_url,class: 'we-show-image') %>
+    <h1 class="text-center mt-3"><%= @workexample.title%></h1>
+    <hr/>
+    <h3>Description</h3>
+    <p class="we-show-text"><%= @workexample.description %></p>
+    <%= render 'technologies' %>
+    <h5>Comments:</h5>
+    <%= render @workexample.workexample_comments %>
+    <%= render 'workexample_comments/new', post: @workexample %>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @workexample.description %>
-</p>
 
-<p>
-  <strong>Thumbimage:</strong>
-  <%= @workexample.thumbimage %>
-</p>
-
-<p>
-  <strong>Mainimage:</strong>
-  <%= @workexample.mainimage %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @workexample.user.name %>
-</p>
-
-<%= render 'technologies' %>
-
-<%= render @workexample.workexample_comments %>
-
-<%= render 'workexample_comments/new', post: @blog %>
-
-<%= link_to 'Edit', edit_workexample_path(@workexample) %> |
-<%= link_to 'Back', workexamples_path %>
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2018 Indra Kumar Mhaski.</p>
+    <ul class="list-inline">
+        <%= link_to 'Home', pages_home_path,class: 'list-inline-item' %>
+        <%= link_to 'Top','#',class: 'list-inline-item' %>
+        <%= link_to 'Blogs', blogs_path,class: 'list-inline-item' %>
+    </ul>
+</footer>
