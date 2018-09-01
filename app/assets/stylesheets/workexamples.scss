@@ -2,3 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "jquery-ui";
+
+
+.we-index-card{
+    width: 30% !important;
+    margin-right: 43px !important;
+    margin-top: 24px;
+}
+
+.we-card-img {
+    height: 263px !important;
+}
+
+.we-index-container{
+    margin-top: 72px !important;
+}
+
+
+    // For small screen sizes
+@media(max-width: 710px) {  
+    .we-index-card{
+        width: inherit !important;
+        margin-top: 35px;
+    }
+}
