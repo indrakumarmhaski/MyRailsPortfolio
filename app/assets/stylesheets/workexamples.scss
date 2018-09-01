@@ -28,6 +28,7 @@
 }
 // ==================== ...Index page ==========================
 
+// ==================== Show Page ==============================
 .we-show-image {
     width: -webkit-fill-available !important;
     margin-top: 56px;
@@ -59,6 +60,31 @@
     }
 
     .comment-textarea {
+        width: 292px;
+        height: 81px;
+    }
+}
+
+// ================================= ... Show page ===================
+
+
+
+.we-form-container{
+    margin-top: 56px !important;
+}
+
+.we-form-description {
+    height: 150px !important;
+}
+
+@media (min-width: 1200px){
+    .we-form-container{
+        max-width: 950px !important;
+    }
+}
+// for small screens
+@media(max-width: 710px) {  
+    .we-form-description {
         width: 292px;
         height: 81px;
     }

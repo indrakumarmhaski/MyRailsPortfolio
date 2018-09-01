@@ -1,3 +1,5 @@
+<div class="container we-form-container">
+  <h3 class="text-center">Work Example</h3>
 <%= form_with(model: workexample, local: true) do |form| %>
   <% if workexample.errors.any? %>
     <div id="error_explanation">
@@ -11,23 +13,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description,class: 'form-control we-form-description' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :thumbimage %><br />
     <%= form.file_field :thumbimage %>
   </div>
 
-  <div class="field">
-    <%= form.label :mainimage %>
+  <div class="field form-group">
+    <%= form.label :mainimage %> <br/>
     <%= form.file_field :mainimage %>
   </div>
 
@@ -37,12 +39,23 @@
     <% end %>
 
   <div class="text-left">
-    <%= link_to_add_association 'AddTechnology', form, :technologies, class: 'btn add-btn btn-primary btn-sm'%>
+    <%= link_to_add_association 'Add Technology', form, :technologies, class: 'btn mt-3 add-btn btn-primary btn-sm'%>
   </div>
   </div>
 
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions mt-4">
+      <%= form.submit class: 'btn btn-lg btn-block btn-success' %>
   </div>
 <% end %>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2018 Indra Kumar Mhaski.</p>
+    <ul class="list-inline">
+        <%= link_to 'Home', pages_home_path,class: 'list-inline-item' %>
+        <%= link_to 'Top','#',class: 'list-inline-item' %>
+        <%= link_to 'Work Examples', workexamples_path,class: 'list-inline-item' %>
+    </ul>
+</footer>
+
+</div>
