@@ -1,47 +1,59 @@
-<%= form_with(model: blog, local: true) do |form| %>
-  <% if blog.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+<div class="container blog-form-container">
+  <h3 class="text-center">Blog</h3>
+  <%= form_with(model: blog, local: true) do |form| %>
+    <% if blog.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
 
-      <ul>
-      <% blog.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
-
-  <div class="field">
-    <%= form.label :blogimage %><br />
-    <%= form.file_field :blogimage %>
-  </div>
-
-  <div class="field">
-    <%= form.fields_for :tags do |tag_form| %>
-      <%= render 'tag_fields',f: tag_form %>
+        <ul>
+        <% blog.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
 
-    <div class="text-left">
-      <%= link_to_add_association 'AddTag', form, :tags, class: 'btn add-btn btn-primary btn-sm'%>
+    <div class="field form-group">
+      <%= form.label :title, class: 'lable' %>:
+      <%= form.text_field :title, class: 'form-control' %>
     </div>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="field form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description,class: 'form-control blog-form-description' %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :body %>
+      <%= form.text_area :body, class: 'form-control blog-form-body' %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label :blogimage %><br />
+      <%= form.file_field :blogimage %>
+    </div>
+
+    <div class="field form-group">
+      <h4>Tags:</h4>
+      <%= form.fields_for :tags do |tag_form| %>
+        <%= render 'tag_fields',f: tag_form %>
+      <% end %>
+
+      <div class="text-left mt-2">
+        <%= link_to_add_association 'Add A Tag', form, :tags, class: 'btn add-btn btn-primary'%>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class: 'btn btn-lg btn-block btn-success' %>
+    </div>
+  <% end %>
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2018 Indra Kumar Mhaski.</p>
+      <ul class="list-inline">
+          <%= link_to 'Home', pages_home_path,class: 'list-inline-item' %>
+          <%= link_to 'Top','#',class: 'list-inline-item' %>
+          <%= link_to 'Work Examples', workexamples_path,class: 'list-inline-item' %>
+      </ul>
+  </footer>
+</div>

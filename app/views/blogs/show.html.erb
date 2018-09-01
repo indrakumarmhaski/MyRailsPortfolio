@@ -1,39 +1,24 @@
 
+<div class="container blog-show-container">
+    <%= image_tag(@blog.blogimage_url,class: 'blog-show-image') %>
+    <h1 class="text-center mt-3"><%= @blog.title%></h1>
+    <p class="blog-show-desc-text"><%= @blog.description %></p>
+    <hr/>
+    <p class="blog-show-text"><%= @blog.body %></p>
+    <%= render 'tags' %>
+    <h5>Comments:</h5>
+    <%= render @blog.blog_comments %>
+    <%= render 'blog_comments/new', post: @blog  %>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @blog.description %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @blog.body %>
-</p>
-
-<p>
-  <strong>Blogimage:</strong>
-  <%= image_tag(@blog.blogimage_url) %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @blog.user.name %>
-</p>
-
+<div class="blog-show-like">
 <%= render 'likes/new',post: @blog if logged_in?(:site_admin,:user) %>
-
-<%= render 'tags' %>
-
-<%= render @blog.blog_comments %>
-
-<%= render 'blog_comments/new', post: @blog  %>
-
-
-
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+</div>
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2018 Indra Kumar Mhaski.</p>
+    <ul class="list-inline">
+        <%= link_to 'Home', pages_home_path,class: 'list-inline-item' %>
+        <%= link_to 'Top', '#',class: 'list-inline-item' %>
+        <%= link_to 'Work Examples', workexamples_path,class: 'list-inline-item' %>
+    </ul>
+</footer>
