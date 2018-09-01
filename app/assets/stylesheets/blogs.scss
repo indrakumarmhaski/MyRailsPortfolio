@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+// ============================================================ Index Page ====================================================================
 .blogindexpage-bg-image{
     background-image: asset_url("blogindexbg.jpg");
     background-size: cover;
@@ -22,7 +22,6 @@
     font-size: 59px;
     font-weight: 400;
 }
-
 #blog-index-desc{
     font-family: "Open Sans", helvetica, arial, sans-serif;
     font-weight: 400;
@@ -39,12 +38,44 @@
     background-color: #28a745 !important;
     border-color: #28a745 !important;
 }
-
-
+.blog-time {
+    font-family: "Open Sans", helvetica, arial, sans-serif;
+    color: #9f9f9f;
+    font-weight: bold;
+    font-size: 12px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    position: relative;
+}
+.blog-index-username{
+    color: #28a745 !important;
+}
+.blog-index-body-heading {
+    text-transform: capitalize;
+    color: #404046;
+    font-weight: bold;
+}
+.blog-index-body-heading:hover{
+    color: #28a745;
+}
+.blog-index-body-text {
+    margin: .6em 0 1em;
+    word-wrap: break-word;
+    font-size: 20px;
+    line-height: 1.3;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+.blog-index-readfull {
+    color: #28a745;
+}
+@media (min-width: 1200px){
+.blog-index-container {
+    max-width: 950px !important;
+    }
+}
 // For large screen sizes
 @media(min-width: 710px) {
 }
-
 // For small screen sizes
 @media(max-width: 710px) {  
     .blogindexpage-bg-image{
@@ -58,3 +89,4 @@
         margin-bottom: 20px;
     }
 }
+// =================================================== ...Index page ==================================================================================

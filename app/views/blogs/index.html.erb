@@ -8,40 +8,32 @@
         </div>
     </div>
 </div>
-
-<h1>Blogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Body</th>
-      <th>Blogimage</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.description %></td>
-        <td><%= blog.body %></td>
-        <td><%= blog.blogimage %></td>
-        <td><%= blog.user.name %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
-
-
- <%= paginate @blogs %>
+<div class="container mt-4 blog-index-container">
+  <% @blogs.each do |blog| %>
+      <div class="blog-index-head">
+        <span class="blog-time">
+          <%= blog.created_at.to_s(:long) %>  
+        </span>
+        <%=link_to blog.user.name, pages_aboutme_path, class: 'blog-index-username'%>
+      </div>
+      <%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %> || 
+      <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
+      <%= link_to "<h2>#{blog.title}</h2>".html_safe, blog, class: 'blog-index-body-heading'%>
+      <div class="blog-index-body">
+        <p class="blog-index-body-text"> 
+          <%= blog.description %> 
+          <%= link_to 'Read Full Blog', blog, class: 'blog-index-readfull'%>
+        </p>
+      </div>
+      <hr/>
+  <% end %>
+  <%= paginate @blogs %>
+</div>
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2018 Indra Kumar Mhaski.</p>
+    <ul class="list-inline">
+        <%= link_to 'Home', pages_home_path,class: 'list-inline-item' %>
+        <%= link_to 'Top', pages_home_path,class: 'list-inline-item' %>
+        <%= link_to 'Work Examples', workexamples_path,class: 'list-inline-item' %>
+    </ul>
+</footer>
