@@ -1,3 +1,60 @@
 // Place all the styles related to the Blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.blogindexpage-bg-image{
+    background-image: asset_url("blogindexbg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    border-top: 1px solid cornflowerblue;
+    background-attachment: fixed;
+}
+.blu-margin{
+    width: 100%;
+    border-top: 1px solid cornflowerblue;
+    margin-top: 55px;
+}
+#blog-welcome-heading{
+    margin-top: 100px;
+    color: white;  
+    font-size: 59px;
+    font-weight: 400;
+}
+
+#blog-index-desc{
+    font-family: "Open Sans", helvetica, arial, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 18px;
+    color: white;
+    line-height: 24px;
+}
+.blog-index-signup-btn{
+    background-color: #48893c !important;
+    border-color: #48893c !important;
+}
+.blog-index-signup-btn:hover {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+
+// For large screen sizes
+@media(min-width: 710px) {
+}
+
+// For small screen sizes
+@media(max-width: 710px) {  
+    .blogindexpage-bg-image{
+        height: 653px;
+    }
+    #demo{
+        margin-top: 104px;
+        font-size: 3rem !important;
+    }
+    .mastfoot{
+        margin-bottom: 20px;
+    }
+}
