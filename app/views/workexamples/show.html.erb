@@ -4,7 +4,7 @@
     <h1 class="text-center mt-3"><%= @workexample.title%></h1>
     <hr/>
     <h3>Description</h3>
-    <p class="we-show-text"><%= @workexample.description %></p>
+    <div class="we-show-text"><%= simple_format(@workexample.description) %></div>
     <%= render 'technologies' %>
     <h5>Comments:</h5>
     <%= render @workexample.workexample_comments %>

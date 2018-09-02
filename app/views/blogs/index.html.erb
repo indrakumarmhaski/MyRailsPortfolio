@@ -19,9 +19,9 @@
       <%= link_to 'Edit || ', edit_blog_path(blog) if logged_in?(:site_admin) %> 
       <%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
       <%= link_to "<h2>#{blog.title}</h2>".html_safe, blog, class: 'blog-index-body-heading'%>
-      <div class="blog-index-body">
+      <div class="blog-index-body blog-index-body-text">
         <p class="blog-index-body-text"> 
-          <%= blog.description %> 
+          <%= simple_format(blog.description) %> 
           <%= link_to 'Read Full Blog', blog, class: 'blog-index-readfull'%>
         </p>
       </div>
