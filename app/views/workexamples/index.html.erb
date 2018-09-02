@@ -9,8 +9,7 @@
                     <li class="card col-xs-12 we-index-card font-weight-normal" data-id="<%= we.id %>" >
                       <%= image_tag(we.thumbimage_url, class: 'card-img-top we-card-img')%>
                         <div class="card-body">
-                           <h5 class="card-title"><%=we.title%></h5>
-                           <p class="card-text"><%= we.description %></p>
+                           <h5 class="card-title"><%= we.title%></h5>
                            <%= link_to 'Check Out', we, class: 'btn btn-primary'%>
                            <%= link_to 'Edit', edit_workexample_path(we), class: 'btn btn-success' if logged_in?(:site_admin) %>
                            <%= link_to 'Destroy', we, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' if logged_in?(:site_admin) %>

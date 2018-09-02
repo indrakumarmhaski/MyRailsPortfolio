@@ -2,9 +2,9 @@
 <div class="container blog-show-container">
     <%= image_tag(@blog.blogimage_url,class: 'blog-show-image') %>
     <h1 class="text-center mt-3"><%= @blog.title%></h1>
-    <p class="blog-show-desc-text"><%= @blog.description %></p>
+    <div class="blog-show-desc-text"><%= simple_format(@blog.description) %></div>
     <hr/>
-    <p class="blog-show-text"><%= @blog.body %></p>
+    <div class="blog-show-text"><%= simple_format(@blog.body) %></div>
     <%= render 'tags' %>
     <h5>Comments:</h5>
     <%= render @blog.blog_comments %>
