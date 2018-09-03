@@ -15,11 +15,21 @@
 > portfolio, it is totally a dynamic web application whose 
 content can be managed by its owner.
 
-License
-----
+### License:
 
 MIT
 
-### A Demo Page:
+---
+
+### Home Page:
 
 ![alt text](public/demo.png)
+
+
+### Blogs:
+
+![alt text](public/blog.png)
+
+### Blogs:
+
+![alt text](public/draganddrop.png)
