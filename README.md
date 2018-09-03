@@ -25,10 +25,13 @@ MIT
 
 ![alt text](public/demo.png)
 
+---
 
 ### Blogs:
 
 ![alt text](public/blog.png)
+
+---
 
 ### Drag And Drop Feature:
 
