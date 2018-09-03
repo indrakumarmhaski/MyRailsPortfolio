@@ -30,6 +30,6 @@ MIT
 
 ![alt text](public/blog.png)
 
-### Blogs:
+### Drag And Drop Feature:
 
 ![alt text](public/draganddrop.png)
